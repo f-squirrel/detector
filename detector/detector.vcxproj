@@ -40,6 +40,10 @@
     <IncludePath>$(OPENCV)\build\include\;$(OPENCV)\build\include\opencv2\;$(BOOST)\;$(IncludePath)</IncludePath>
     <LibraryPath>$(BOOST)\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(OPENCV)\build\include\;$(OPENCV)\build\include\opencv2\;$(BOOST)\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(BOOST)\lib\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -57,11 +61,13 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>$(OPENCV)\build\x86\vc10\lib\opencv_core240.lib;$(OPENCV)\build\x86\vc10\lib\opencv_highgui240.lib;$(OPENCV)\build\x86\vc10\lib\opencv_video240.lib;$(OPENCV)\build\x86\vc10\lib\opencv_ml240.lib;$(OPENCV)\build\x86\vc10\lib\opencv_legacy240.lib;$(OPENCV)\build\x86\vc10\lib\opencv_imgproc240.lib;$(OPENCV)\build\x86\vc10\lib\opencv_haartraining_engine.lib;$(OPENCV)\build\x86\vc10\lib\opencv_objdetect240.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

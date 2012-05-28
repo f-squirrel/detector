@@ -19,10 +19,8 @@ int main(int argc, char* argv[]) {
 		po::options_description desc("Allowed options");
 		desc.add_options()
 			("help", "produce help message")
-			("compression",	po::value<int>(),			"set compression level")
-			("image",		po::value<int>(),			"set path to image file")
-			("video",		po::value<std::string>(),	"set path to video file")
-			("camera",		po::value<int>(),			"set camera id")
+			("source",		po::value<int>(),			"set source type")
+			("path",		po::value<std::string>(),	"set path to image or video or id for camera")
 			("cascade",		po::value<std::string>(),	"set path to cascade");
 
 		po::variables_map vm;
@@ -32,13 +30,6 @@ int main(int argc, char* argv[]) {
 		if (vm.count("help")) {
 			std::cout << desc << "\n";
 			return 1;
-		}
-
-		if (vm.count("compression")) {
-			std::cout << "Compression level was set to " 
-				<< vm["compression"].as<int>() << ".\n";
-		} else {
-			std::cout << "Compression level was not set.\n";
 		}
 
 		SourceFactory factory;
