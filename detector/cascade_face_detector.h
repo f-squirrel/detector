@@ -12,7 +12,7 @@ namespace detector {
 		explicit CascadeFaceDetector(const std::string& cascade_file_name);
 		~CascadeFaceDetector();
 		virtual void detect(cv::Mat& source_image);
-		virtual bool is_ready() const { return !m_cascade.empty(); }
+		virtual bool is_ready() { return !m_cascade.empty(); }
 	private:
 		cv::CascadeClassifier m_cascade;
 	};

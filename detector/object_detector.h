@@ -12,7 +12,7 @@ namespace detector {
 		virtual ~ObjectDetector() = 0 {}
 	
 		virtual void detect(cv::Mat& source_image) = 0;
-		virtual bool is_ready() const = 0;
+		virtual bool is_ready() = 0;
 	};
 }
 #endif	//OBJECT_DETECTOR_H
