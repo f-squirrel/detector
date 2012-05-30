@@ -1,0 +1,14 @@
+This is a very simple face\object detector.
+It is designed using opencv and boost.
+
+Currently it is available only for Windows OS.
+
+To build it you need do next preparations:
+1. install MS Visual C++ 2010
+2. Set environment variable:
+OPENCV == <drive letter>:\openCV\opencv
+BOOST == <drive letter>:\boost\boost_<current version>
+For example this is my configuration:
+d:\openCV\opencv
+d:\boost\boost_1_49_0
+3. Both libs should be precompiled
