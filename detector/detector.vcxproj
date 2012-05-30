@@ -37,11 +37,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(OPENCV)\build\include\;$(OPENCV)\build\include\opencv2\;$(BOOST)\;$(IncludePath)</IncludePath>
+    <IncludePath>$(OPENCV)\build\include\;$(OPENCV)\build\include\opencv2\;$(BOOST)\;$(ProjectDir)include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(BOOST)\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(OPENCV)\build\include\;$(OPENCV)\build\include\opencv2\;$(BOOST)\;$(IncludePath)</IncludePath>
+    <IncludePath>$(OPENCV)\build\include\;$(OPENCV)\build\include\opencv2\;$(BOOST)\;$(ProjectDir)include\;$(IncludePath)</IncludePath>
     <LibraryPath>$(BOOST)\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
