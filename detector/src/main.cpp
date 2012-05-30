@@ -18,8 +18,8 @@ int main(int argc, char* argv[]) {
 
 		po::options_description desc("Allowed options");
 		desc.add_options()
-			("help", "produce help message")
-			("source",		po::value<int>(),			"set source type")
+			("help",		"produce help message")
+			("source",		po::value<std::string>(),	"set source type")
 			("path",		po::value<std::string>(),	"set path to image or video or id for camera")
 			("cascade",		po::value<std::string>(),	"set path to cascade");
 
@@ -33,14 +33,14 @@ int main(int argc, char* argv[]) {
 		}
 
 		SourceFactory factory;
- 		source_ptr_t source = factory.create("imagesource", "d:\\Projects\\openCV\\detector\\detector\\data\\lena.jpg");
+ 		source_ptr_t source = factory.create("imagesource", "d:\\Projects\\detector\\detector\\data\\lena.jpg");
 
 		//source_ptr_t source(new ImageSource("d:\\Projects\\openCV\\detector\\detector\\data\\lena.jpg"));
 		//source_ptr_t source(new FrameSource("d:\\Projects\\openCV\\detector\\detector\\data\\browser.flv"));
 		//source_ptr_t source(new FrameSource(200)) ;
 		display_ptr_t display(new OpenCVDisplay("Frame window"));
 		object_detector_ptr_t object_detector(new CascadeFaceDetector(
-			"d:\\Projects\\openCV\\detector\\detector\\data\\haarcascade_frontalface_alt.xml")
+			"d:\\Projects\\detector\\detector\\data\\haarcascade_frontalface_alt.xml")
 			);
 		ImageProcessor img_processor(source, display, object_detector);
 		img_processor.run();
