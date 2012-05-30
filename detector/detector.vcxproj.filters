@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\cascade_face_detector.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\source_factory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\image_processor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MAIN.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\opencv_display.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cascade_face_detector.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\detector_exception.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\image_display.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\image_processor.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\object_detector.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\opencv_display.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Source.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\source_factory.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{864c3a83-a11d-46bb-bed6-db492dba97a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{47d84d52-e395-4fcb-9526-857ae9bb8f98}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

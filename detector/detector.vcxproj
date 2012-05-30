@@ -71,21 +71,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="cascade_face_detector.cpp" />
-    <ClCompile Include="image_processor.cpp" />
-    <ClCompile Include="MAIN.cpp" />
-    <ClCompile Include="opencv_display.cpp" />
-    <ClCompile Include="source_factory.cpp" />
+    <ClCompile Include="src\cascade_face_detector.cpp" />
+    <ClCompile Include="src\image_processor.cpp" />
+    <ClCompile Include="src\MAIN.cpp" />
+    <ClCompile Include="src\opencv_display.cpp" />
+    <ClCompile Include="src\source_factory.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="detector_exception.h" />
-    <ClInclude Include="source_factory.h" />
-    <ClInclude Include="cascade_face_detector.h" />
-    <ClInclude Include="image_display.h" />
-    <ClInclude Include="image_processor.h" />
-    <ClInclude Include="object_detector.h" />
-    <ClInclude Include="opencv_display.h" />
-    <ClInclude Include="Source.h" />
+    <ClInclude Include="include\detector_exception.h" />
+    <ClInclude Include="include\source_factory.h" />
+    <ClInclude Include="include\cascade_face_detector.h" />
+    <ClInclude Include="include\image_display.h" />
+    <ClInclude Include="include\image_processor.h" />
+    <ClInclude Include="include\object_detector.h" />
+    <ClInclude Include="include\opencv_display.h" />
+    <ClInclude Include="include\Source.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
