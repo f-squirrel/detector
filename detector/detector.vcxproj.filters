@@ -16,6 +16,9 @@
     <ClCompile Include="src\opencv_display.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\cmdline_parser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\cascade_face_detector.h">
@@ -40,6 +43,9 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="include\source_factory.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cmdline_parser.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>

@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 		}
 
 		SourceFactory factory;
- 		source_ptr_t source = factory.create("imagesource", "d:\\Projects\\detector\\detector\\data\\lena.jpg");
+ 		auto source = factory.create("imagesource", "d:\\Projects\\detector\\detector\\data\\lena.jpg");
 
 		//source_ptr_t source(new ImageSource("d:\\Projects\\openCV\\detector\\detector\\data\\lena.jpg"));
 		//source_ptr_t source(new FrameSource("d:\\Projects\\openCV\\detector\\detector\\data\\browser.flv"));
