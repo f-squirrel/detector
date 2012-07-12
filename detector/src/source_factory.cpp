@@ -3,8 +3,10 @@
 
 namespace detector {
 	
-	const std::string image_source = "imagesource";
-	const std::string frame_source = "framesource";
+	const std::string image_source = "image";
+	const std::string frame_source = "video";
+	const std::string camera_source = "camera";
+
 	
 	SourceFactory::SourceFactory() {}
 	
@@ -15,8 +17,12 @@ namespace detector {
 		else if (source_id == frame_source) {
 			return std::shared_ptr<Source>( new FrameSource( source_file ) );
 		}
+		else if (source_id == camera_source) {
+			int device_id = atoi(source_file.c_str());
+			return std::shared_ptr<Source>( new FrameSource( device_id ) );
+		}
 		else {
-			throw DetectorRuntimeException("Unknown source id: " +source_id);
+			throw DetectorRuntimeException("Unknown source type: " + source_id);
 		}
 		std::shared_ptr<Source> src(new ImageSource( source_file ));
 		return src;

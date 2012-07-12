@@ -1,12 +1,13 @@
 #include"source.h"
 #include<string>
+#include<sstream>
 
 namespace detector {
 
 	ImageSource::ImageSource(const std::string& filename) : is_first_show(true) {
 		image = cv::imread(filename);
 		if ( !is_ready() ) {
-			throw DetectorRuntimeException("cannot open " + filename);
+			throw DetectorRuntimeException("cannot open image: " + filename);
 		}
 	}
 
@@ -23,15 +24,16 @@ namespace detector {
 
 	FrameSource::FrameSource(const std::string& filename) : capture(filename) {
 		if (!is_ready()) {
-			const std::string err_msg = "cannot open " + filename;
+			const std::string err_msg = "cannot open video: " + filename;
 			throw DetectorRuntimeException(err_msg);
 		}
 	}
 	
 	FrameSource::FrameSource(int device_id) : capture(device_id) {
 		if (!is_ready()) {
-			const std::string err_msg = "cannot open " + device_id;
-			throw DetectorRuntimeException(err_msg);
+			std::stringstream err_stream;
+			err_stream << "cannot open camera with id: " << device_id << std::endl;
+			throw DetectorRuntimeException(err_stream.str());
 		}
 	}
 
