@@ -1,5 +1,5 @@
 #include "image_processor.h"
-
+#include <boost\thread.hpp>
 namespace detector {
 
 	ImageProcessor::ImageProcessor(source_ptr_t src, display_ptr_t display, object_detector_ptr_t object_detector_ptr)
@@ -18,10 +18,9 @@ namespace detector {
 			m_object_detector_ptr->detect(image);
 			m_display_ptr->display(image);
 
-			if ( cv::waitKey(1) == 27) {
+			if ( cv::waitKey(2) == 27) {
 				break;
 			}
-
 		}
 	}
 }

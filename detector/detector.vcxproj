@@ -71,10 +71,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source.cpp" />
     <ClCompile Include="src\cmdline_parser.cpp" />
     <ClCompile Include="src\cascade_face_detector.cpp" />
     <ClCompile Include="src\image_processor.cpp" />
-    <ClCompile Include="src\MAIN.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\opencv_display.cpp" />
     <ClCompile Include="src\source_factory.cpp" />
   </ItemGroup>
@@ -87,7 +88,7 @@
     <ClInclude Include="include\image_processor.h" />
     <ClInclude Include="include\object_detector.h" />
     <ClInclude Include="include\opencv_display.h" />
-    <ClInclude Include="include\Source.h" />
+    <ClInclude Include="include\source.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

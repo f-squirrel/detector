@@ -33,14 +33,14 @@ int main(int argc, char* argv[]) {
 		}
 
 		SourceFactory factory;
- 		auto source = factory.create("imagesource", "d:\\Projects\\detector\\detector\\data\\lena.jpg");
+ 		auto source = factory.create("framesource", "d:\\Projects\\detector\\detector\\data\\browser.flv");
 
 		//source_ptr_t source(new ImageSource("d:\\Projects\\openCV\\detector\\detector\\data\\lena.jpg"));
 		//source_ptr_t source(new FrameSource("d:\\Projects\\openCV\\detector\\detector\\data\\browser.flv"));
 		//source_ptr_t source(new FrameSource(200)) ;
 		display_ptr_t display(new OpenCVDisplay("Frame window"));
 		object_detector_ptr_t object_detector(new CascadeFaceDetector(
-			"d:\\Projects\\detector\\detector\\data\\haarcascade_frontalface_alt.xml")
+			"d:\\Projects\\detector\\detector\\data\\haarcascade_frontalface_alt.xml", false)
 			);
 		ImageProcessor img_processor(source, display, object_detector);
 		img_processor.run();
@@ -48,5 +48,7 @@ int main(int argc, char* argv[]) {
 	catch (std::exception& ex) {
 		std::cout << ex.what() << std::endl;
 	}
+
+	system("pause");
 	return 0;
 }
