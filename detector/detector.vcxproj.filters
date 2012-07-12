@@ -19,7 +19,7 @@
     <ClCompile Include="src\cmdline_parser.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="source.cpp">
+    <ClCompile Include="src\source.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

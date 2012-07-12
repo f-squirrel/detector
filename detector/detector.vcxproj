@@ -71,7 +71,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="source.cpp" />
+    <ClCompile Include="src\source.cpp" />
     <ClCompile Include="src\cmdline_parser.cpp" />
     <ClCompile Include="src\cascade_face_detector.cpp" />
     <ClCompile Include="src\image_processor.cpp" />
