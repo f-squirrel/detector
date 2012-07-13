@@ -1,5 +1,5 @@
-#ifndef SOURCE_FACTORY_H
-#define SOURCE_FACTORY_H
+#ifndef source_FACTORY_H
+#define source_FACTORY_H
 
 #include <memory>
 #include "source.h"
@@ -7,13 +7,13 @@
 
 namespace detector {
 	
-	class SourceFactory {
+	class source_factory {
 	public:
-		explicit SourceFactory();
+		explicit source_factory();
 	
-		std::shared_ptr<Source> create(const std::string& source_id, const std::string& source_file) const;
+		std::shared_ptr<source> create(const std::string& source_id, const std::string& source_file) const;
 	private:
 	};
 }
 
-#endif	//SOURCE_FACTORY_H
+#endif	//source_FACTORY_H

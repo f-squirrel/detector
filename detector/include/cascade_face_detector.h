@@ -7,10 +7,10 @@
 
 namespace detector {
 	
-	class CascadeFaceDetector : public ObjectDetector {
+	class cascade_face_detector : public object_detector {
 	public:
-		explicit CascadeFaceDetector(const std::string& cascade_file_name, bool use_cpp_detect = true);
-		~CascadeFaceDetector();
+		explicit cascade_face_detector(const std::string& cascade_file_name, bool use_cpp_detect = true);
+		~cascade_face_detector();
 		virtual void detect(cv::Mat source_image);
 		virtual bool is_ready() { return !m_cascade.empty(); }
 	private:

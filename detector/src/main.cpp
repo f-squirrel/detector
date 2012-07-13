@@ -33,11 +33,11 @@ int main(int argc, char* argv[]) {
 			return 1;
 		}
 
-		SourceFactory factory;
+		source_factory factory;
  		auto source = factory.create(vm["sourcetype"].as<std::string>(), vm["sourcepath"].as<std::string>());
-		display_ptr_t display(new OpenCVDisplay("Frame window"));
-		object_detector_ptr_t object_detector(new CascadeFaceDetector(vm["cascadepath"].as<std::string>(), false));
-		ImageProcessor img_processor(source, display, object_detector);
+		display_ptr_t display(new openCV_display("Frame window"));
+		object_detector_ptr_t object_detector(new cascade_face_detector(vm["cascadepath"].as<std::string>(), false));
+		image_processor img_processor(source, display, object_detector);
 		img_processor.run();
 	}
 	catch (std::exception& ex) {

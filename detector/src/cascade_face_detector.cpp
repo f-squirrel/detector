@@ -36,11 +36,11 @@ namespace detector {
 		return rects;
 	}
 
-	CascadeFaceDetector::CascadeFaceDetector(const std::string& cascade_file_name, bool use_cpp_detect) : m_cascade(cascade_file_name), m_cascade_file_name(cascade_file_name), m_use_cpp_detect(use_cpp_detect) {}
+	cascade_face_detector::cascade_face_detector(const std::string& cascade_file_name, bool use_cpp_detect) : m_cascade(cascade_file_name), m_cascade_file_name(cascade_file_name), m_use_cpp_detect(use_cpp_detect) {}
 
-	CascadeFaceDetector::~CascadeFaceDetector() {}
+	cascade_face_detector::~cascade_face_detector() {}
 
-		void CascadeFaceDetector::c_detect(cv::Mat source_image) {
+		void cascade_face_detector::c_detect(cv::Mat source_image) {
 		CvRect rc;
 		IplImage * isource = &source_image.operator IplImage();
 		CvHaarClassifierCascade* faceCascade = (CvHaarClassifierCascade*)cvLoad(m_cascade_file_name.c_str(), 0, 0, 0);
@@ -56,7 +56,7 @@ namespace detector {
 		cvReleaseHaarClassifierCascade( &faceCascade );
 	}
 	
-	void CascadeFaceDetector::cpp_detect(cv::Mat source_image) {
+	void cascade_face_detector::cpp_detect(cv::Mat source_image) {
 		cv::Mat frame_gray;
 		cv::cvtColor(source_image, frame_gray, CV_BGR2GRAY);
 		cv::equalizeHist(frame_gray, frame_gray);
@@ -74,9 +74,9 @@ namespace detector {
 		}
 	}
 
-	void CascadeFaceDetector::detect(cv::Mat source_image) {
+	void cascade_face_detector::detect(cv::Mat source_image) {
 		if (!is_ready()) {
-			throw DetectorRuntimeException("Detector is not ready: cascade is empty\n");
+			throw detector_runtime_exception("Detector is not ready: cascade is empty\n");
 		}
 
 		if (m_use_cpp_detect) {

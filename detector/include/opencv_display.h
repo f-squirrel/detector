@@ -5,9 +5,9 @@
 
 namespace detector{
 
-	class OpenCVDisplay : public ImageDisplay {
+	class openCV_display : public image_display {
 	public:
-		explicit OpenCVDisplay( const std::string& window_name );
+		explicit openCV_display( const std::string& window_name );
 	
 		virtual void display( cv::Mat& image );
 	

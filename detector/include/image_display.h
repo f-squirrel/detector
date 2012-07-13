@@ -5,10 +5,10 @@
 
 namespace detector {
 
-	class ImageDisplay : boost::noncopyable {
+	class image_display : boost::noncopyable {
 	public:
-		explicit ImageDisplay() {}
-		virtual ~ImageDisplay() = 0 {};
+		explicit image_display() {}
+		virtual ~image_display() = 0 {};
 	
 		virtual void display(cv::Mat& image) = 0;
 	};

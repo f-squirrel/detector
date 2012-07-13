@@ -16,10 +16,10 @@
     <ClCompile Include="src\opencv_display.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\cmdline_parser.cpp">
+    <ClCompile Include="src\source.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\source.cpp">
+    <ClCompile Include="src\detector_options.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -48,7 +48,10 @@
     <ClInclude Include="include\source_factory.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\cmdline_parser.h">
+    <ClInclude Include="include\detector_options.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\concurrent_queue.h">
       <Filter>include</Filter>
     </ClInclude>
   </ItemGroup>
