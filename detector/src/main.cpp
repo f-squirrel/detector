@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 			("sourcetype",	po::value<std::string>(),	"set source type [image | video | camera]")
 			("sourcepath",	po::value<std::string>(),	"set path to image or video or id for camera")
 			("cascadetype",	po::value<std::string>(),	"set cascade type [haar]")
-			("cascadepath", po::value<std::string>(),	"set path tp cascade xml");
+			("cascadepath", po::value<std::string>(),	"set path to cascade xml");
 
 		po::variables_map vm;
 		po::store(po::parse_command_line(argc, argv, desc), vm);
@@ -33,8 +33,7 @@ int main(int argc, char* argv[]) {
 			return 1;
 		}
 
-		source_factory factory;
- 		auto source = factory.create(vm["sourcetype"].as<std::string>(), vm["sourcepath"].as<std::string>());
+ 		auto source = source_factory::create(vm["sourcetype"].as<std::string>(), vm["sourcepath"].as<std::string>());
 		display_ptr_t display(new openCV_display("Frame window"));
 		object_detector_ptr_t object_detector(new cascade_face_detector(vm["cascadepath"].as<std::string>(), false));
 		image_processor img_processor(source, display, object_detector);

@@ -14,9 +14,9 @@ namespace detector {
 		virtual bool is_ready() const = 0;
 	};
 
-	class Imagesource : public source {
+	class image_source : public source {
 	public:
-		explicit Imagesource(const std::string& filename);
+		explicit image_source(const std::string& filename);
 		virtual void next(cv::Mat& img);
 		virtual bool is_ready() const { return !image.empty(); }
 		
@@ -25,10 +25,10 @@ namespace detector {
 		bool is_first_show;
 	};
 
-	class Framesource : public source {
+	class frame_source : public source {
 	public:
-		explicit Framesource(const std::string& filename);
-		explicit Framesource(int device_id);
+		explicit frame_source(const std::string& filename);
+		explicit frame_source(int device_id);
 
 		virtual void next(cv::Mat& img);
 		virtual bool is_ready() const { return capture.isOpened(); }

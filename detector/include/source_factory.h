@@ -9,10 +9,10 @@ namespace detector {
 	
 	class source_factory {
 	public:
-		explicit source_factory();
 	
-		std::shared_ptr<source> create(const std::string& source_id, const std::string& source_file) const;
+		static std::shared_ptr<source> create(const std::string& source_type, const std::string& source_file);
 	private:
+		explicit source_factory();
 	};
 }
 

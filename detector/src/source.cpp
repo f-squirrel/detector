@@ -4,7 +4,7 @@
 
 namespace detector {
 
-	Imagesource::Imagesource(const std::string& filename) : is_first_show(true) {
+	image_source::image_source(const std::string& filename) : is_first_show(true) {
 		// due to defect of openCV: in release version imread cannot open file
 #ifdef WIN32
 		image = cvLoadImage(filename.c_str());
@@ -16,7 +16,7 @@ namespace detector {
 		}
 	}
 
-	void Imagesource::next(cv::Mat& img) {
+	void image_source::next(cv::Mat& img) {
 		if (is_first_show) {
 			is_first_show = false;
 			img = image;
@@ -27,14 +27,14 @@ namespace detector {
 		}
 	}
 
-	Framesource::Framesource(const std::string& filename) : capture(filename) {
+	frame_source::frame_source(const std::string& filename) : capture(filename) {
 		if (!is_ready()) {
 			const std::string err_msg = "cannot open video: " + filename;
 			throw detector_runtime_exception(err_msg);
 		}
 	}
 	
-	Framesource::Framesource(int device_id) : capture(device_id) {
+	frame_source::frame_source(int device_id) : capture(device_id) {
 		if (!is_ready()) {
 			std::stringstream err_stream;
 			err_stream << "cannot open camera with id: " << device_id << std::endl;
@@ -42,7 +42,7 @@ namespace detector {
 		}
 	}
 
-	void Framesource::next(cv::Mat& img) {
+	void frame_source::next(cv::Mat& img) {
 		capture >> img;
 	}
 

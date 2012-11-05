@@ -3,28 +3,25 @@
 
 namespace detector {
 	
-	const std::string image_source = "image";
-	const std::string frame_source = "video";
-	const std::string camera_source = "camera";
-
+	const std::string image = "image";
+	const std::string frame = "video";
+	const std::string camera = "camera";
 	
-	source_factory::source_factory() {}
-	
-	std::shared_ptr<source> source_factory::create(const std::string& source_id, const std::string& source_file) const {
-		if (source_id == image_source) {
-			return std::shared_ptr<source>( new Imagesource( source_file ) );
+	std::shared_ptr<source> source_factory::create(const std::string& source_type, const std::string& source_file) {
+		if (source_type == image) {
+			return std::shared_ptr<source>( new image_source( source_file ) );
 		}
-		else if (source_id == frame_source) {
-			return std::shared_ptr<source>( new Framesource( source_file ) );
+		else if (source_type == frame) {
+			return std::shared_ptr<source>( new frame_source( source_file ) );
 		}
-		else if (source_id == camera_source) {
+		else if (source_type == camera) {
 			int device_id = atoi(source_file.c_str());
-			return std::shared_ptr<source>( new Framesource( device_id ) );
+			return std::shared_ptr<source>( new frame_source( device_id ) );
 		}
 		else {
-			throw detector_runtime_exception("Unknown source type: " + source_id);
+			throw detector_runtime_exception("Unknown source type: " + source_type);
 		}
-		std::shared_ptr<source> src(new Imagesource( source_file ));
+		std::shared_ptr<source> src(new image_source( source_file ));
 		return src;
 	}
 }
