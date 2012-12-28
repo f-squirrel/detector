@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 			return 1;
 		}
 
- 		auto source = source_factory::create(vm["sourcetype"].as<std::string>(), vm["sourcepath"].as<std::string>());
+		auto source = source_factory::create(vm["sourcetype"].as<std::string>(), vm["sourcepath"].as<std::string>());
 		display_ptr_t display(new openCV_display("Frame window"));
 		object_detector_ptr_t object_detector(new cascade_face_detector(vm["cascadepath"].as<std::string>(), false));
 		image_processor img_processor(source, display, object_detector);

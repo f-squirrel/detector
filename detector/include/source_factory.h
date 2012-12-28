@@ -7,13 +7,14 @@
 
 namespace detector {
 	
-	class source_factory {
-	public:
+class source_factory {
+public:
 	
-		static std::shared_ptr<source> create(const std::string& source_type, const std::string& source_file);
-	private:
-		explicit source_factory();
-	};
+	static std::unique_ptr<source> create(const std::string& source_type, const std::string& source_file);
+private:
+	explicit source_factory();
+};
+
 }
 
 #endif	//source_FACTORY_H

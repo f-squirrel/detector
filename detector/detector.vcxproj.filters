@@ -54,6 +54,9 @@
     <ClInclude Include="include\concurrent_queue.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="image_procesor_worker.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="include">

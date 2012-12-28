@@ -5,13 +5,14 @@
 
 namespace detector {
 
-	class image_display : boost::noncopyable {
-	public:
-		explicit image_display() {}
-		virtual ~image_display() = 0 {};
+class image_display : boost::noncopyable {
+public:
+	explicit image_display() {}
+	virtual ~image_display() = 0 {};
 	
-		virtual void display(cv::Mat& image) = 0;
-	};
+	virtual void display(cv::Mat& image) = 0;
+};
+
 }
 
 #endif	//IMAGE_DISPLAY_H
